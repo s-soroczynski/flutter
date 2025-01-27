@@ -1,4 +1,4 @@
-import 'package:checkout_redem/main.dart';
+import './screen.dart';
 import 'package:flutter/material.dart';
 
 class RewardSummaryScreen extends StatelessWidget {
@@ -109,7 +109,7 @@ class RewardSummaryScreen extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (_) => MyHomePage(
+                            builder: (_) => MainScreen(
                                   title: 'Flutter Demo Home Page',
                                   isSuccess: true,
                                 )),
