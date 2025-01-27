@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './views/chunk.dart';
+import './views/main/checkout_redemption/chunk.dart';
 
 void main() {
   runApp(const MyApp());

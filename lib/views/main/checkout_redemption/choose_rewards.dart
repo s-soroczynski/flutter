@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'main/checkout_redemption/rewards/rewards.dart';
+import '../components/rewards.dart';
 
 class CheckoutRedemption extends StatelessWidget {
   const CheckoutRedemption({super.key});

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './checkout_redemption.dart';
+import 'choose_rewards.dart';
 
 class RewardsSelectionChunk extends StatelessWidget {
   const RewardsSelectionChunk({super.key});
