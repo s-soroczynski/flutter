@@ -13,7 +13,12 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  final mainState = MainState();
+  @override
+  void initState() {
+    super.initState();
+    final mainState = context.read<MainState>();
+    mainState.loadData(); // Wywołaj na starcie
+  }
 
   @override
   Widget build(BuildContext context) {

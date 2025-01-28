@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import '../state.dart';
 import '../views/summary_screen.dart';
 
 class RewardCard extends StatelessWidget {
@@ -59,16 +57,14 @@ class RewardCard extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (_) => ChangeNotifierProvider(
-                            create: (_) => MainState(),
-                            child: RewardSummaryScreen(
-                              rewardName: rewardName,
-                              rewardDescription:
-                                  'Zastosujemy ją automatycznie do Twojego zakupu.',
-                              rewardCost: rewardCost,
-                              userTokens: userTokens,
-                            ),
-                          )),
+                    builder: (_) => RewardSummaryScreen(
+                      rewardName: rewardName,
+                      rewardDescription:
+                          'Zastosujemy ją automatycznie do Twojego zakupu.',
+                      rewardCost: rewardCost,
+                      userTokens: userTokens,
+                    ),
+                  ),
                 );
               },
               child: Text(
