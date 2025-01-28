@@ -108,7 +108,10 @@ class RewardSummaryScreen extends StatelessWidget {
                   const SizedBox(height: 8),
                   ElevatedButton(
                     onPressed: () {
-                      context.read<GlobalState>().mainState.setSuccess(true);
+                      context
+                          .read<GlobalState>()
+                          .mainState
+                          .setShowSuccessSnackbar(true);
                       Navigator.pushNamed(context, '/main');
                     },
                     style: ElevatedButton.styleFrom(

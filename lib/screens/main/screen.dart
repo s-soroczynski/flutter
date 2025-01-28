@@ -19,7 +19,7 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     final mainState = context.watch<GlobalState>().mainState;
 
-    if (mainState.isSuccess) {
+    if (mainState.showSuccessSnackbar) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
@@ -35,7 +35,7 @@ class _MainScreenState extends State<MainScreen> {
             ),
           ),
         );
-        mainState.setSuccess(false);
+        mainState.setShowSuccessSnackbar(false);
       });
     }
 

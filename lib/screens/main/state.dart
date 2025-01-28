@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 
 class MainState extends ChangeNotifier {
-  bool isSuccess = false;
+  bool showSuccessSnackbar = false;
 
-  void setSuccess(bool value) {
-    isSuccess = value;
+  void setShowSuccessSnackbar(bool value) {
+    showSuccessSnackbar = value;
   }
 }
