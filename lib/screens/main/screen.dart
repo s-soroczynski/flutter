@@ -1,8 +1,7 @@
-import 'package:checkout_redem/global-state.dart';
+import 'package:checkout_redem/global_state.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'views/chunk.dart';
-import './state.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key, required this.title});
@@ -16,8 +15,8 @@ class _MainScreenState extends State<MainScreen> {
   @override
   void initState() {
     super.initState();
-    final mainState = context.read<MainState>();
-    mainState.loadData(); // Wywołaj na starcie
+    final globalState = context.read<GlobalState>();
+    globalState.mainState.loadData();
   }
 
   @override
