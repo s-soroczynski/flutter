@@ -1,4 +1,6 @@
-import './screen.dart';
+import 'package:checkout_redem/global-state.dart';
+import 'package:provider/provider.dart';
+
 import 'package:flutter/material.dart';
 
 class RewardSummaryScreen extends StatelessWidget {
@@ -106,14 +108,8 @@ class RewardSummaryScreen extends StatelessWidget {
                   const SizedBox(height: 8),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (_) => MainScreen(
-                                  title: 'Flutter Demo Home Page',
-                                  isSuccess: true,
-                                )),
-                      );
+                      context.read<GlobalState>().mainState.setSuccess(true);
+                      Navigator.pushNamed(context, '/main');
                     },
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(

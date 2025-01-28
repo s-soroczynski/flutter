@@ -1,21 +1,25 @@
+import 'package:checkout_redem/global-state.dart';
 import 'package:flutter/material.dart';
-import './chunk.dart';
+import 'package:provider/provider.dart';
+import 'views/chunk.dart';
+import './state.dart';
 
 class MainScreen extends StatefulWidget {
-  const MainScreen({super.key, required this.title, required this.isSuccess});
-
+  const MainScreen({super.key, required this.title});
   final String title;
-  final bool isSuccess;
 
   @override
   State<MainScreen> createState() => _MainScreenState();
 }
 
 class _MainScreenState extends State<MainScreen> {
+  final mainState = MainState();
+
   @override
-  void initState() {
-    super.initState();
-    if (widget.isSuccess) {
+  Widget build(BuildContext context) {
+    final mainState = context.watch<GlobalState>().mainState;
+
+    if (mainState.isSuccess) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
@@ -31,12 +35,10 @@ class _MainScreenState extends State<MainScreen> {
             ),
           ),
         );
+        mainState.setSuccess(false);
       });
     }
-  }
 
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
