@@ -1,5 +1,5 @@
+import 'package:checkout_redem/routing.dart';
 import 'package:flutter/material.dart';
-import 'choose_rewards.dart';
 
 class RewardsSelectionChunk extends StatelessWidget {
   const RewardsSelectionChunk({super.key});
@@ -36,11 +36,9 @@ class RewardsSelectionChunk extends StatelessWidget {
               )),
           subtitle: Text("Spend less on this purchase",
               style: TextStyle(fontSize: 12)),
-          onTap: () => Navigator.push(
+          onTap: () => Navigator.pushNamed(
             context,
-            MaterialPageRoute(
-              builder: (context) => CheckoutRedemption(),
-            ),
+            Routing.mainChooseRewards,
           ),
         ),
       ),

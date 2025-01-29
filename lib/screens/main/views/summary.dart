@@ -1,7 +1,7 @@
 import 'package:checkout_redem/global_state.dart';
+import 'package:checkout_redem/routing.dart';
 import 'package:checkout_redem/screens/main/components/summary_table.dart';
 import 'package:provider/provider.dart';
-
 import 'package:flutter/material.dart';
 
 class RewardSummaryScreen extends StatelessWidget {
@@ -25,7 +25,6 @@ class RewardSummaryScreen extends StatelessWidget {
         leading: IconButton(
             icon: const Icon(Icons.arrow_back),
             onPressed: () {
-              Navigator.pop(context);
               Navigator.pop(context);
             }),
       ),
@@ -76,7 +75,7 @@ class RewardSummaryScreen extends StatelessWidget {
                           .read<GlobalState>()
                           .mainState
                           .setShowSuccessSnackbar(true);
-                      Navigator.pushNamed(context, '/main');
+                      Navigator.pushNamed(context, Routing.main);
                     },
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(
