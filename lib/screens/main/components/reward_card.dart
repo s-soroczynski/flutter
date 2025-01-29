@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../views/summary_screen.dart';
+import '../views/summary.dart';
 
 class RewardCard extends StatelessWidget {
   final IconData icon;

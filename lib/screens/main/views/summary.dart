@@ -1,4 +1,5 @@
 import 'package:checkout_redem/global_state.dart';
+import 'package:checkout_redem/screens/main/components/summary_table.dart';
 import 'package:provider/provider.dart';
 
 import 'package:flutter/material.dart';
@@ -19,8 +20,6 @@ class RewardSummaryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final int remainingTokens = userTokens - rewardCost;
-
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -36,65 +35,30 @@ class RewardSummaryScreen extends StatelessWidget {
           child: Column(
             children: [
               Expanded(
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Aktywować nagrodę?',
-                        style: const TextStyle(
-                          fontSize: 32,
-                          fontWeight: FontWeight.bold,
-                        ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Aktywować nagrodę?',
+                      style: const TextStyle(
+                        fontSize: 32,
+                        fontWeight: FontWeight.bold,
                       ),
-                      const SizedBox(height: 16),
-                      Text(
-                        rewardDescription,
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.grey[700],
-                        ),
+                    ),
+                    const SizedBox(height: 16),
+                    Text(
+                      rewardDescription,
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.grey[700],
                       ),
-                      const SizedBox(height: 32),
-                      Row(
-                        children: [
-                          const Text('Nagroda'),
-                          const Spacer(),
-                          Text(
-                            rewardName,
-                            style: const TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 14),
-                          ),
-                        ],
-                      ),
-                      const Divider(),
-                      const SizedBox(height: 8),
-                      Row(
-                        children: [
-                          const Text('Wykorzystasz'),
-                          const Spacer(),
-                          Text(
-                            '$rewardCost tokenów',
-                            style: const TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 14),
-                          ),
-                        ],
-                      ),
-                      const Divider(),
-                      const SizedBox(height: 8),
-                      Row(
-                        children: [
-                          const Text('Pozostanie Ci'),
-                          const Spacer(),
-                          Text(
-                            '$remainingTokens tokenów',
-                            style: const TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 14),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
+                    ),
+                    const SizedBox(height: 32),
+                    SummaryTable(
+                        rewardName: rewardName,
+                        rewardCost: rewardCost,
+                        userTokens: userTokens)
+                  ],
                 ),
               ),
               Column(
