@@ -16,7 +16,7 @@ class _MainScreenState extends State<MainScreen> {
   void initState() {
     super.initState();
     final globalState = context.read<GlobalState>();
-    globalState.mainState.loadData();
+    globalState.mainState.loadMockData();
   }
 
   @override
